@@ -107,9 +107,6 @@ router.post('/complete-idv', authenticate, async (req, res) => {
       identity_verification_id: identity_verification_id
     });
     
-    // Create a new model for storing IDV results
-    const PlaidIdentityVerification = require('../models/PlaidIdentityVerification');
-    
     // Save verification status
     const verification = new PlaidIdentityVerification({
       user: req.user.id,
