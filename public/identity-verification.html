@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta property="og:title" content="Identity Verification - Pagomigo">
+  <meta property="og:description" content="Verify your identity to unlock all Pagomigo features.">
+  <meta property="og:image" content="pagomigodisplayimage.png">
+  <meta property="og:url" content="https://www.pagomigo.com/kyc.html">
+  <meta property="og:type" content="website">
+  <title>Identity Verification - Pagomigo</title>
+  <link rel="stylesheet" href="kyc.css">
+  <link rel="stylesheet" href="index.css">
+  <script src="https://cdn.withpersona.com/dist/persona-v5.1.2.js" integrity="sha384-nuMfOsYXMwp5L13VJicJkSs8tObai/UtHEOg3f7tQuFWU5j6LAewJbjbF5ZkfoDo" crossorigin="anonymous"></script>
+</head>
+<body>
+  <header class="main-header">
+    <div class="logo">
+      <a href="home.html"><img src="pagomigologo.png" alt="Pagomigo Logo" width="100"></a>
+    </div>
+    <img src="menuicon.svg" alt="Menu" class="hamburger" id="hamburger" />
+  </header>
+  <!--To change or add to nav go to menu.js-->
+  <nav class="slideout-menu" id="slideoutMenu">
+    <img src="closeicon.svg" alt="Close" class="close-btn" id="closeMenu" />
+    <ul id="navList"></ul>
+  </nav>
+
+  <main class="kyc-container">
+    <!-- Initial KYC information -->
+    <div class="kyc-intro" id="kyc-intro">
+      <h1>Verify Your Identity</h1>
+      <p>To keep Pagomigo secure and compliant with regulations, we need to verify your identity.</p>
+      <p>This process takes just a few minutes and requires:</p>
+      <ul>
+        <li>A valid government-issued photo ID (passport, driver's license, etc.)</li>
+        <li>A device with a camera for a quick selfie</li>
+      </ul>
+      <p>Once verified, you'll be able to send and receive money without limitations.</p>
+      <button id="start-persona-btn" class="primary-btn">Start Verification</button>
+    </div>
+    
+    <!-- Persona container where the verification UI will be mounted -->
+    <div id="persona-container" class="persona-container hidden"></div>
+    
+    <!-- Verification submitted screen -->
+    <div class="kyc-complete hidden" id="kyc-complete">
+      <h1>Verification Submitted!</h1>
+      <p>Thank you for completing the identity verification process.</p>
+      <p>We're reviewing your information and will update your account status shortly.</p>
+      <button id="return-to-dashboard" class="primary-btn">Return to Dashboard</button>
+    </div>
+
+    <!-- Verification already done screen -->
+    <div class="kyc-already-verified hidden" id="kyc-already-verified">
+      <h1>Identity Already Verified</h1>
+      <p>Your identity has already been verified. You have full access to all Pagomigo features!</p>
+      <button id="return-to-dashboard-verified" class="primary-btn">Return to Dashboard</button>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-row footer-logo">
+      <img src="pagomigologo.png" alt="Pagomigo Logo" width="100" />
+    </div>
+    <div class="footer-row footer-links">
+      <a href="termsandconditions.html">Terms & Conditions</a>
+      <a href="privacypolicy.html">Privacy Policy</a>
+    </div>
+    <div class="footer-row footer-copy">
+      <p>&copy; 2025 Pagomigo.com L.L.C. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="kyc.js"></script>
+  <script src="menu.js"></script>
+</body>
+</html>

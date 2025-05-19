@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta property="og:title" content="Pagomigo - Send Money Fast and Securely">
+  <meta property="og:description" content="The digital wallet for the Hispanic world. Send and receive money with Pagomigo.">
+  <meta property="og:image" content="pagomigodisplayimage.png">
+  <meta property="og:url" content="https://www.pagomigo.com/dashboard.html">
+  <meta property="og:type" content="website">
+  <title>My Dashboard - Pagomigo</title>
+  <link rel="stylesheet" href="dashboard.css">
+  <link rel="stylesheet" href="index.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+</head>
+<body>
+    <header class="main-header">
+        <div class="logo"><a href="home.html"><img src="pagomigologo.png" id="logo" alt="pagomigologo"></a>
+        </div>
+        <img src="menuicon.svg" alt="Menu" class="hamburger" id="hamburger" />
+      </header>
+    <!--To change or add to nav go to menu.js-->
+      <nav class="slideout-menu" id="slideoutMenu">
+        <img src="closeicon.svg" alt="Close" class="close-btn" id="closeMenu" />
+        <ul id="navList"></ul>
+      </nav>
+  </header>
+
+  <main class="dashboard">
+    <section class="user-info">
+      <section class="user-info-inner-section">
+      <h2>Welcome <span id="user-fullname">Full Name</span></h2>  
+      <p>Username: <span id="user-name">User</span></p>
+      <p>Phone: <span id="user-phone">+1...</span></p>
+      <p>Email: <span id="user-email">Email</span></p>
+      <p>Address: <span id="user-address">Address</span></p>
+      <p>Persona Verification Status: <span id="user-kyc">pending</span></p>
+      <p>Account Balance: <span id="user-balance">$0.00</span></p>
+      <div class="editprofilebtn">
+        <button id="openEditProfileModal">Edit Profile</button>
+      </div>
+      </section>
+
+       <!-- Plaid Identity Verification Section -->
+      <section class="dashboard-card">
+        <div class="card-header">
+          <h2>For North America and Europe Use Plaid to Verify Your Identity</h2>
+        </div>
+        <div class="card-body">
+          <div class="verification-status" id="verification-status-container">
+            <div class="status-indicator" id="verification-status-indicator">
+              <div class="status-circle pending" id="verification-status-circle"></div>
+              <span id="verification-status-text">Plaid Verification pending</span>
+            </div>
+            <p id="verification-message">Complete identity verification to unlock all features of your account.</p>
+          </div>
+          
+          <div class="verification-actions">
+            <button id="verify-identity-btn" class="plaidverify-btn"> 
+              Verify Your Identity
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Plaid Banking Section (Add after your existing banking section) -->
+<section id="plaid-section" class="banking-section">
+  <div class="section-header">
+    <h3>Plaid Connected Bank Accounts</h3>
+    <div class="balance-info">
+      <span class="balance-label">Checking Account Balance:</span>
+      <span id="plaid-total-balance" class="balance-amount">$0.00</span>
+    </div>
+  </div>
+  
+  <div class="banking-actions">
+    <button id="connect-bank-btn" class="banking-btn primary-btn">
+      Connect Bank Account
+    </button>
+    <!--<button id="view-transactions-btn" class="banking-btn secondary-btn">
+      <img src="receipt_long_FILL0_wght400_GRAD0_opsz24.svg" alt="Transactions" class="btn-icon">
+      View Transactions
+    </button>-->
+  </div>
+  
+  <!-- Messages -->
+  <div id="plaid-error-message" class="error-message hidden"></div>
+  <div id="plaid-success-message" class="success-message hidden"></div>
+  
+  <!-- No accounts message -->
+  <div id="no-plaid-accounts" class="no-account-container">
+    <h4>No Bank Accounts Connected</h4>
+    <p>Connect your bank accounts to easily track balances and transactions in one place.</p>
+  </div>
+  
+  <!-- Connected accounts container -->
+  <div id="plaid-accounts-container" class="accounts-container hidden">
+    <ul id="plaid-accounts-list" class="accounts-list">
+      <!-- Accounts will be populated by JS -->
+    </ul>
+  </div>
+</section>
+
+<!-- Plaid Transactions Panel (Initially Hidden) -->
+<div id="plaid-transactions-panel" class="action-panel hidden">
+  <div class="panel-header">
+    <h4>Recent Transactions</h4>
+    <button class="close-panel">&times;</button>
+  </div>
+  <div class="transactions-filter">
+    <select id="account-filter">
+      <option value="all">All Accounts</option>
+      <!-- Account options will be populated by JS -->
+    </select>
+    <select id="date-filter">
+      <option value="7">Last 7 days</option>
+      <option value="30" selected>Last 30 days</option>
+      <option value="90">Last 3 months</option>
+    </select>
+  </div>
+  <ul id="plaid-transactions-list" class="transactions-list">
+    <!-- Transactions will be populated by JS -->
+  </ul>
+  <div id="load-more-container" class="load-more-container hidden">
+    <button id="load-more-transactions" class="secondary-btn">Load More</button>
+  </div>
+</div>
+
+      <!-- KYC banner -->
+        <section class="kyc-banner" id="kyc-banner">
+          <div class="kyc-banner-content">
+            <h3>Complete your profile to unlock all features</h3>
+            <p>Take a moment to verify your identity and access all Pagomigo features, including sending and receiving money.</p>
+            <button id="start-kyc-btn" class="primary-btn">Complete Verification</button>
+          </div>
+        </section>
+      
+    </section>
+
+    <section class="transactions">
+      <h3>Recent Transactions</h3>
+      <ul id="transaction-list">
+        <!-- Populated by JS -->
+      </ul>
+    </section>
+  
+    <section class="requests">
+      <h3>Incoming Requests</h3>
+      <ul id="request-list">
+        <!-- Populated by JS -->
+      </ul>
+    </section>
+
+    <!-- Banking Section -->
+    <section id="banking" class="banking-section">
+  <div class="section-header">
+    <h3>Banking</h3>
+    <div class="balance-info">
+      <span class="balance-label">Cash Balance:</span>
+      <span id="unit-balance" class="balance-amount">$0.00</span>
+    </div>
+  </div>
+  
+  <div class="banking-actions">
+    <button id="send-money-trigger" class="banking-btn primary-btn">Send Money
+    </button>
+    <button id="request-money-trigger" class="banking-btn secondary-btn">
+      Request Money
+    </button>
+    <button id="deposit-trigger" class="banking-btn secondary-btn">
+      Deposit
+    </button>
+  </div>
+  
+  <!-- Send Money Form Panel (Initially Hidden) -->
+  <div id="send-money-panel" class="action-panel hidden">
+    <div class="panel-header">
+      <h4>Send Money</h4>
+      <button class="close-panel">&times;</button>
+    </div>
+    <form id="send-money-form">
+      <div class="form-group">
+        <label for="receiver-input">To</label>
+        <input id="receiver-input" type="text" placeholder="Phone or email" required>
+      </div>
+      <div class="form-group">
+        <label for="amount-input">Amount</label>
+        <div class="amount-input-wrapper">
+          <span class="currency-symbol">$</span>
+          <input id="amount-input" type="number" min="0.01" step="0.01" placeholder="0.00" required>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="note-input">Note (Optional)</label>
+        <input id="note-input" type="text" placeholder="What's it for?">
+      </div>
+      <div class="form-actions">
+        <div id="send-error-message" class="error-message hidden"></div>
+        <button id="send-button" type="submit" class="primary-btn">Send Money</button>
+      </div>
+    </form>
+  </div>
+  
+  <!-- Request Money Form Panel (Initially Hidden) -->
+  <div id="request-money-panel" class="action-panel hidden">
+    <div class="panel-header">
+      <h4>Request Money</h4>
+      <button class="close-panel">&times;</button>
+    </div>
+    <form id="request-money-form">
+      <div class="form-group">
+        <label for="request-from-input">From</label>
+        <input id="request-from-input" type="text" placeholder="Phone or email" required>
+      </div>
+      <div class="form-group">
+        <label for="request-amount-input">Amount</label>
+        <div class="amount-input-wrapper">
+          <span class="currency-symbol">$</span>
+          <input id="request-amount-input" type="number" min="0.01" step="0.01" placeholder="0.00" required>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="request-note-input">Note (Optional)</label>
+        <input id="request-note-input" type="text" placeholder="What's it for?">
+      </div>
+      <div class="form-actions">
+        <div id="request-error-message" class="error-message hidden"></div>
+        <button id="request-button" type="submit" class="primary-btn">Request Money</button>
+      </div>
+    </form>
+  </div>
+  
+  <!-- Account Setup Notice (Shown if no Unit account) -->
+  <div id="no-account-message" class="no-account-container hidden">
+    <h4>Set Up Your Banking Account</h4>
+    <p>You need to set up a Unit banking account to send and receive money directly.</p>
+    <button id="setup-account-btn" class="primary-btn">Set Up Account</button>
+  </div>
+</section>
+
+  <section class="dashboardmodal">
+     
+  <div id="editProfileModal" class="modal hidden">
+    <div class="modal-content">
+      <span class="close-profile-modal">&times;</span>
+      <h2>Edit Profile</h2>
+      <form id="editProfileForm">
+        <input type="text" id="edit-name" placeholder="Full Name" required />
+        <input type="text" id="edit-username" placeholder="Username" required />
+        <input type="email" id="edit-email" placeholder="Email" required />
+        <input type="text" id="edit-phone" placeholder="Phone Number" required />
+        <input type="text" id="edit-address" placeholder="Address" required />
+        <button class="savechangesbtn" type="submit">Save Changes</button>
+      </form>
+    </div>
+  </div>
+  </section>
+  <!-- QR code html -->
+   <section class="outerqrcode-section">
+  <section class="qrcode-section">
+    <div class="profile-qrcode">
+        <h3>My Profile QR Code</h3>
+        <p>Friends can scan this to connect with you</p>
+        <div id="qrcode-container"></div>
+        <button id="download-qrcode" class="secondary-btn">Download QR Code</button>
+    </div>
+  </section>
+  </section>
+</main>
+
+  <footer class="site-footer">
+    <div class="footer-row footer-logo">
+      <img src="pagomigologo.png" alt="Pagomigo Logo" width="100" />
+    </div>
+  
+    <div class="footer-row footer-links">
+      <a href="termsandconditions.html">Terms & Conditions</a>
+      <a href="privacypolicy.html">Privacy Policy</a>
+    </div>
+  
+    <div class="footer-row footer-copy">
+      <p>&copy; 2025 Pagomigo.com L.L.C. All rights reserved.</p>
+    </div>
+  </footer>
+  <script src="dashboard.js"></script>
+  <script src="menu.js"></script>
+  <script src="plaidLink.js"></script>
+</body>
+</html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta property="og:title" content="Pagomigo - Send Money Fast and Securely">
+  <meta property="og:description" content="The digital wallet for the Hispanic world. Send and receive money with Pagomigo.">
+  <meta property="og:image" content="pagomigodisplayimage.png">
+  <meta property="og:url" content="https://www.pagomigo.com/home.html">
+  <meta property="og:type" content="website">
+
+  <title>Pagomigo - Home</title>
+  <link rel="stylesheet" href="home.css">
+  <link rel="icon" href="public/newpagomigofavicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="main-header">
+    <div class="logo"><a href="home.html"><img src="pagomigologo.png" id="logo" alt="pagomigologo"></a>
+    </div>
+    <img src="menuicon.svg" alt="Menu" class="hamburger" id="hamburger" />
+  </header>
+  <!--To change or add to nav go to menu.js-->
+  <nav class="slideout-menu" id="slideoutMenu">
+    <img src="closeicon.svg" alt="Close" class="close-btn" id="closeMenu" />
+    <ul id="navList"></ul>
+  </nav>
+
+  <main class="hero-section">
+    <div class="video-background">
+    <div class="video-overlay"></div>
+    <video autoplay muted loop id="hero-video">
+      <source src="Spanishgirlshopping.mp4" type="video/mp4">
+      <!-- Fallback text if video doesn't load -->
+      Your browser does not support the video tag.
+    </video>
+      <!-- Mobile viewport -->
+      <video autoplay muted loop playsinline preload="auto" id="mobile-video" class="hero-video">
+      <source src="spanishgirlshoppingmobile.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    </div>
+    <div class="hero-text">
+      <h1 class="heroh1" >Envía dinero con inteligencia,<br>seguridad y velocidad.</h1>
+      <h2 class="heroh2" >The only Digital Wallet You Need.</h2>
+      <div class="cta-buttons">
+        <a href="dashboard.html#banking" class="send-cta-button">Send/Request Payment</a>
+    
+    </div>
+      <div>
+        <h3 class="heroh3">Únete ahora para empezar a enviar y recibir dinero.</h3>
+        <button id="signupbtn">Join Now</button>
+      </div>
+    </div>
+  </main>
+
+  <section class="retailsection">
+    <h2 class="retailsectionh2">Shop Anywhere Using Pagomigo!</h2>
+    <div class="retailsectiongrid">
+      <div class="retailitem">
+        <div class="retailimagecontainer">
+          <img src="newcoffeemaker.png" alt="coffee maker" class="coffeemaker" />
+        </div>
+      </div>
+      <div class="retailitem">
+        <div class="retailimagecontainer">
+          <img src="newdogbed.png" alt="Dog bed" class="dogbed" />
+        </div>
+      </div>
+      <div class="retailitem">
+        <div class="retailimagecontainer">
+          <img src="newsneakers.png" alt="sneakers" class="sneakers" />
+        </div>
+      </div>
+      <div class="retailitem">
+        <div class="retailimagecontainer">
+          <img src="newgameconsole.png" alt="gameconsole" class="gameconsole" />
+        </div>
+      </div>
+      <div class="retailitem">
+        <div class="retailimagecontainer">
+          <img src="newtires.png" alt="new tires" class="newtires" />
+        </div>
+      </div>
+      <div class="retailitem">
+        <div class="retailimagecontainer">
+          <img src="newwatch.png" alt="new watch" class="newwatch" />
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  
+  <section class="debit-card-section">
+    <div class="debit-card-grid">
+      <!-- Left column: text -->
+      <div class="debit-card-text">
+        <h2>Use Your Pagomigo Debit Card Anywhere</h2>
+        <img src="pagomigodisplayimage.png" alt="pgomigo visa root" class="visa" />
+        <p>Shop online or in-store, pay bills, and access your money instantly with your Pagomigo debit card. Your card is accepted wherever Mastercard or Visa is accepted.</p>
+  
+        <div class="features-list">
+          <div class="feature-item">
+            <h3>Instant Access</h3>
+            <p>Use your card to make purchases or withdraw cash from ATMs across the U.S.</p>
+          </div>
+          <div class="feature-item">
+            <h3>Touchless Payments</h3>
+            <p>Scan a QR code or tap your phone to pay securely using NFC technology.</p>
+          </div>
+          <div class="feature-item">
+            <h3>Bill Pay</h3>
+            <p>Pay utility bills, rent, and more directly from your Pagomigo wallet.</p>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Right column: image placeholder -->
+      <div class="debit-card-image">
+        <img src="bonitasenoritaphone.png" alt="Bonita senorita using her phone" />
+      </div>
+    </div>
+  </section>
+
+  <section class="features-section">
+    <h2 class="featuresh2">Features</h2>
+    <div class="features-grid">
+      <div class="feature-item">
+        <a href="moneymover.html"><img src="sendmoneyiphone.png" alt="Send Money Icon" /></a>
+        <h3>Send Money</h3>
+        <p>Send money to friends and family instantly, no matter where they are.</p>
+      </div>
+      <div class="feature-item">
+        <a href="moneymover.html"><img src="requestmoneyiphoneportrait.png" alt="Request Money Icon" /></a>
+        <h3>Request Money</h3>
+        <p>Request money from anyone, anywhere, with just a few taps.</p>
+      </div>
+      <div class="feature-item">
+        <a href="billpay.html"></a><img src="billpayportait.png" alt="Pay Bills Icon" /></a>
+        <h3>Pay Bills</h3>
+        <p>Pay your bills directly from your Pagomigo wallet, hassle-free.</p>
+      </div>
+    </div>
+  </section>
+
+        <!-- Sign Up Modal -->
+    <div id="signup-modal" class="modal-overlay">
+      <div class="modal-content">
+        <span class="modal-close" id="close-signup">&times;</span>
+        <h2>Create Your Account</h2>
+        <form id="signup-form">
+          <input type="text" id="name" placeholder="Full Name" required />
+          <input type="text" id="username" placeholder="Username" required />
+          <input type="tel" id="phone" placeholder="Phone Number" required />
+          <input type="password" id="signup-password" placeholder="Password" required />
+          <div class="terms-checkbox">
+          <input type="checkbox" id="agreeTerms" required />
+          <label for="agreeTerms">
+            I agree to the <a href="terms.html" target="_blank">Terms & Conditions</a> and
+            <a href="privacy.html" target="_blank">Privacy Policy</a>
+          </label>
+        </div>
+
+          <button type="submit" class="cta-button">Submit</button>
+        </form>
+        <p id="signup-message"></p>
+      </div>
+    </div>
+
+  <footer class="site-footer">
+    <div class="footer-row footer-logo">
+      <img src="pagomigologo.png" alt="Pagomigo Logo" width="100" />
+    </div>
+    <div class="footer-row footer-links">
+      <a href="termsandconditions.html">Terms & Conditions</a>
+      <a href="privacypolicy.html">Privacy Policy</a>
+    </div>
+    <div class="footer-row footer-copy">
+      <p>&copy; 2025 Pagomigo.com L.L.C. All rights reserved.</p>
+    </div>
+  </footer>
+   <script src="home.js" defer></script>
+   <script src="index.js"></script>
+   <script src="menu.js"></script>
+</body>
+</html>

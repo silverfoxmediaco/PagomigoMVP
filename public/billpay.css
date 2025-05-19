@@ -1,0 +1,518 @@
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f5f7fa;
+  }
+  
+  .main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    background-color: white;
+    color: white;
+  }
+  
+  .logo img {
+    width: 100px;
+  }
+  
+  .hamburger {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    display: block;
+    object-fit: contain;
+    margin-right: 20px;
+  }
+
+  .close-btn {
+    width: 28px;
+    height: 28px;
+    background-color: white;
+    cursor: pointer;
+    position: absolute;
+    top: 26px;
+    right: 26px;
+  }
+  
+  .slideout-menu {
+    position: fixed;
+    right: -260px;
+    top: 0;
+    width: 250px;
+    height: 100%;
+    background-color: #0033cc;
+    color: white;
+    transition: right 0.3s ease;
+    padding-top: 60px;
+    z-index: 999;
+  }
+  
+  .slideout-menu.open {
+    right: 0;
+  }
+  
+  .slideout-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .slideout-menu li {
+    padding: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .slideout-menu a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  
+  .billpay {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px; 
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    background-color: #f5f7fa;
+    min-height: calc(100vh - 60px);
+    margin-top: 60px;
+    margin-bottom: 60px;
+  }
+
+  .billpay-container h1 {
+    font-size: 45px;
+  }
+
+  .utilities {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+    background-color: blue;
+    margin-top: 0px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  .utilities h2 {
+    font-size: 30px;
+    margin-bottom: 20px;
+    color: white;
+  }
+
+  .utilities h3 {
+    font-size: 25px;
+    margin-bottom: 20px;
+    color: white;
+  }
+  .utilities p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: white;
+  }
+
+  .utilities-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    margin-bottom: 10px;
+    padding: 10px;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+  }
+
+  .rentmortgage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    background-color: blue;
+    margin-top: 0px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    min-height: 500px;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  .rentmortgage h2 {
+    font-size: 30px;
+    margin-bottom: 20px;
+    color: white;
+  }
+
+  .rentmortgage h3 {
+    font-size: 25px;
+    margin-bottom: 20px;
+    color: white;
+  }
+  .rentmortgage p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #fff;
+  }
+
+  .rentmortgage-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    margin-bottom: 10px;
+    padding: 10px;
+    
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+  }
+
+  .automotive {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    background-color: blue;
+    margin-top: 0px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    min-height: 515px;
+  }
+
+  .automotive h2 {
+    font-size: 30px;
+    margin-bottom: 20px;
+    color: white;
+  }
+
+  .automotive h3 {
+    font-size: 25px;
+    margin-bottom: 20px;
+    color: white;
+  }
+  .automotive p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #fff;
+  }
+  
+  .automotive-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    margin-bottom: 10px;
+    padding: 10px;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+  }
+
+  .autoloan {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px; 
+    padding-left: 40px;
+    padding-right: 40px;
+    margin-bottom: 10px;
+    min-width: 200px;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(210, 210, 210, 0.1);
+  }
+
+  .rentbtn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 40px;
+    padding-right: 40px;
+    margin-bottom: 10px;
+    min-width: 200px;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(210, 210, 210, 0.1);
+  }
+
+  .utilitiesbtn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(210, 210, 210, 0.1);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 40px;
+    padding-right: 40px;
+    margin-bottom: 10px;
+    min-width: 200px;
+  }
+
+    /* Footer Styles */
+.site-footer {
+    background-color: #f5f7fa;
+    padding: 1rem 1rem;
+    color: #0033cc;
+    text-align: center;
+  }
+  
+  .footer-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+  }
+  
+  .footer-column {
+    padding: 20px;
+  }
+  
+  .footer-links {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+  }
+  
+  .footer-links a {
+    color: #0033cc;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  
+  .footer-links a:hover {
+    text-decoration: underline;
+  }
+  
+  .footer-copy p {
+    margin: 0;
+    font-size: 0.95rem;
+  }
+
+/* Responsive adjustments */
+  @media (max-width: 768px) {
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+    
+      .footer-links {
+        flex-direction: row;
+        justify-content: center;
+        gap: 20px;
+      }
+
+      .billpay {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px; 
+        align-items: center;
+        justify-content: center;
+        padding: 2rem;
+        background-color: #f5f7fa;
+        min-height: calc(100vh - 60px);
+        margin-top: 60px;
+        margin-bottom: 60px;
+      }
+    
+      .billpay-container h1 {
+        font-size: 30px;
+      }
+    
+      .utilities {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 2rem;
+        background-color: blue;
+        margin-top: 0px;
+        margin-bottom: 20px;
+        border: none;
+        border-radius: 12px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+    
+      .utilities h2 {
+        font-size: 25px;
+        margin-bottom: 20px;
+        color: white;
+      }
+    
+      .utilities h3 {
+        font-size: 20px;
+        margin-bottom: 20px;
+        color: white;
+      }
+      .utilities p {
+        font-size: 15px;
+        margin-bottom: 20px;
+        color: white;
+      }
+      .utilities ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        color: white;
+      }
+      .utilities li {
+        font-size: 15px;
+        margin-bottom: 10px;
+        padding: 10px;
+        color: white;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 400px;
+        text-align: center;
+      }
+    
+      .rentmortgage {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 2rem;
+        background-color: blue;
+        margin-top: 0px;
+        margin-bottom: 20px;
+        border: none;
+        border-radius: 12px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+    
+      .rentmortgage h2 {
+        font-size: 25px;
+        margin-bottom: 20px;
+        color: white;
+      }
+    
+      .rentmortgage h3 {
+        font-size: 20px;
+        margin-bottom: 20px;
+        color: white;
+      }
+      .rentmortgage p {
+        font-size: 15px;
+        margin-bottom: 20px;
+        color: #fff;
+      }
+      .rentmortgage ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+      }
+      .rentmortgage li {
+        font-size: 15px;
+        margin-bottom: 10px;
+        padding: 10px;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 400px;
+        text-align: center;
+      }
+    
+      .automotive {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 2rem;
+        background-color: blue;
+        margin-top: 0px;
+        margin-bottom: 20px;
+        border: none;
+        border-radius: 12px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+    
+      .automotive h2 {
+        font-size: 25px;
+        margin-bottom: 20px;
+        color: white;
+      }
+    
+      .automotive h3 {
+        font-size: 20px;
+        margin-bottom: 20px;
+        color: white;
+      }
+      .automotive p {
+        font-size: 15px;
+        margin-bottom: 20px;
+        color: #fff;
+      }
+      .automotive ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+      }
+      .automotive li {
+        font-size: 15px;
+        margin-bottom: 10px;
+        padding: 10px;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 400px;
+        text-align: center;
+      }
+
+
+  }
+
+  

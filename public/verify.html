@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta property="og:title" content="Pagomigo - Send Money Fast and Securely">
+  <meta property="og:description" content="The digital wallet for the Hispanic world. Send and receive money with Pagomigo.">
+  <meta property="og:image" content="pagomigodisplayimage.png">
+  <meta property="og:url" content="https://www.pagomigo.com/verify.html">
+  <meta property="og:type" content="website">
+    <title>Verify | Pagomigo</title>
+    <link rel="stylesheet" href="verify.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    
+</head>
+<body>
+    <header class="main-header">
+        <div class="logo">
+          <a href="home.html"><img src="pagomigologo.png" alt="Pagomigo Logo" width="100"></a>
+        </div>
+        <img src="menuicon.svg" alt="Menu" class="hamburger" id="hamburger" />
+      
+        <!--To change or add to nav go to menu.js-->
+      <nav class="slideout-menu" id="slideoutMenu">
+        <img src="closeicon.svg" alt="Close" class="close-btn" id="closeMenu" />
+        <ul id="navList"></ul>
+      </nav>
+    </header>
+    <main class="verify-section">
+        <h1>Verify Your Phone</h1>
+        <p>Enter the 6-digit code sent to your phone.</p>
+        
+        <form id="verifyForm">
+          <input type="tel" id="verificationCode" placeholder="Enter verification code" maxlength="6" required />
+          <button type="submit">Verify Code</button>
+          <p id="verify-message"></p>
+        </form>
+      </main>
+      <footer class="site-footer">
+        <div class="footer-row footer-logo">
+          <img src="pagomigologo.png" alt="Pagomigo Logo" width="100" />
+        </div>
+      
+        <div class="footer-row footer-links">
+          <a href="termsandconditions.html">Terms & Conditions</a>
+          <a href="privacypolicy.html">Privacy Policy</a>
+        </div>
+      
+        <div class="footer-row footer-copy">
+          <p>&copy; 2025 Pagomigo.com L.L.C. All rights reserved.</p>
+        </div>
+      </footer>  
+    
+</body>
+    <script src="verify.js"></script>
+    <script src="menu.js"></script>
+    <script src="index.js"></script>
+</html>

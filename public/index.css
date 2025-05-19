@@ -1,0 +1,198 @@
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f5f7fa;
+    color: #333;
+  }
+
+  .main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 1rem 1.5rem;
+    height: 70px;
+    color: white;
+  }
+
+  .logo img {
+    display: block;
+    width: 120px;
+    height: auto;
+    max-height: 50px;
+  }
+
+  .hamburger {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    display: block;
+    object-fit: contain;
+    margin-right: 20px;
+  }
+
+  .close-btn {
+    width: 28px;
+    height: 28px;
+    background-color: white;
+    cursor: pointer;
+    position: absolute;
+    top: 26px;
+    right: 26px;
+  }
+
+  .slideout-menu {
+    position: fixed;
+    right: -260px;
+    top: 0;
+    width: 250px;
+    height: 100%;
+    background-color: #0033cc;
+    color: white;
+    transition: right 0.3s ease;
+    padding-top: 60px;
+    z-index: 999;
+  }
+
+  .slideout-menu.open {
+    right: 0;
+  }
+
+  .slideout-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .slideout-menu li {
+    padding: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .slideout-menu a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  .hero-section {
+    padding: 3rem 1.5rem;
+    text-align: center;
+  }
+
+  .heroh1 {
+  font-size: 50px;
+    color: #0033cc;
+    margin-bottom: 1rem;
+}
+
+  .hero-section p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    max-width: 600px;
+    margin: 0 auto 3rem auto;
+  }
+
+  .cta-buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: center;
+    margin: 1rem auto;
+    max-width: 600px;
+    width: 100%;
+    flex-wrap: wrap;
+    align-items: center;
+    
+  }
+  
+  
+  .send-cta-button,
+  .request-cta-button {
+    background-color: #00cc66;
+    color: white;
+    padding: 1rem 1.5rem;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 18px;
+    border-radius: 6px;
+    transition: background-color 0.3s;
+    text-align: center;
+    flex: 1 1 200px;
+    max-width: 300px;
+  }
+
+  .cta-button:hover {
+    background-color: #00994d;
+  }
+  
+  /* Responsive tweaks */
+
+  @media (min-width: 768px) {
+    .heroh1 {
+  font-size: 20px;
+    color: #0033cc;
+    margin-bottom: 1rem;
+}
+
+    .hero-section p {
+      font-size: 1.2rem;
+    }
+
+    .main-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: white;
+        padding: 1rem 1.5rem;
+        height: 70px;
+        color: white;
+      }
+    
+      .logo img {
+        display: block;
+        width: 120px;
+        height: auto;
+        max-height: 50px;
+      }
+    
+      .hamburger {
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+        display: block;
+        object-fit: contain;
+      }
+    
+      .close-btn {
+        width: 28px;
+        height: 28px;
+        background-color: white;
+        cursor: pointer;
+      }
+
+      .cta-buttons {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        justify-content: center;
+        margin: 1rem auto;
+        max-width: 600px;
+        width: 100%;
+        flex-wrap: wrap;
+        align-items: center;
+        
+      }
+
+      .cta-button {
+        background-color: #00cc66;
+        color: white;
+        padding: .7rem 1.5rem;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 15px;
+        border-radius: 6px;
+        margin-left: 5px;
+        transition: background-color 0.3s;
+      }
+}

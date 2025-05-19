@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta property="og:title" content="Pagomigo - Send Money Fast and Securely">
+      <meta property="og:description" content="The digital wallet for the Hispanic world. Send and receive money with Pagomigo.">
+      <meta property="og:image" content="pagomigodisplayimage.png">
+      <meta property="og:url" content="https://www.pagomigo.com/login.html">
+      <meta property="og:type" content="website">
+    <title>Money Mover | Pagomigo</title>
+    <link rel="stylesheet" href="login.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="main-header">
+    <div class="logo">
+      <a href="home.html"><img src="pagomigologo.png" alt="Pagomigo Logo" width="100"></a>
+    </div>
+    <img src="menuicon.svg" alt="Menu" class="hamburger" id="hamburger" />
+  </header>
+  <!--To change or add to nav go to menu.js-->
+  <nav class="slideout-menu" id="slideoutMenu">
+    <img src="closeicon.svg" alt="Close" class="close-btn" id="closeMenu" />
+    <ul id="navList"></ul>
+  </nav>
+  <main class="auth-page">
+    <h1>Log into Your Account</h1>
+
+    <form id="login-form">
+      <input class="input" type="tel" id="login-phone" placeholder="Phone Number" required />
+      <input class="input" type="password" id="login-password" placeholder="Password" required />
+      <button type="submit" class="login-button">Login</button>
+    </form>
+      <p><a href="#" id="forgot-password-link">Forgot password?</a></p>
+
+<!-- Reset Password Modal -->
+<div id="resetPasswordModal" class="modal hidden">
+  <div class="modal-content">
+    <span class="close-reset-modal">&times;</span>
+    <div id="reset-step-phone">
+      <h2>Reset Password</h2>
+      <form id="resetPhoneForm">
+        <input type="tel" id="reset-phone" placeholder="Phone Number" required />
+        <button type="submit">Send Code</button>
+      </form>
+    </div>
+
+    <div id="reset-step-code" class="hidden">
+      <h2>Enter Code</h2>
+      <form id="verifyCodeForm">
+        <input type="text" id="reset-code" placeholder="6-digit Code" required />
+        <button type="submit">Verify</button>
+      </form>
+    </div>
+
+    <div id="reset-step-newpass" class="hidden">
+      <h2>Set New Password</h2>
+      <form id="newPasswordForm">
+        <input type="password" id="new-password" placeholder="New Password" required />
+        <button type="submit">Update Password</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+    <p id="login-message"></p>
+    <hr />
+  </main>
+  <footer class="site-footer">
+    <div class="footer-row footer-logo">
+      <img src="pagomigologo.png" alt="Pagomigo Logo" width="100" />
+    </div>
+    <div class="footer-row footer-links">
+      <a href="termsandconditions.html">Terms & Conditions</a>
+      <a href="privacypolicy.html">Privacy Policy</a>
+    </div>
+    <div class="footer-row footer-copy">
+      <p>&copy; 2025 Pagomigo.com L.L.C. All rights reserved.</p>
+    </div>
+  </footer>
+      <script src="/login.js"></script>
+    <script src="menu.js"></script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta property="og:title" content="Pagomigo - Connected Accounts">
+  <meta property="og:description" content="The digital wallet for the Hispanic world. Connect your bank accounts with Pagomigo.">
+  <meta property="og:image" content="pagomigodisplayimage.png">
+  <meta property="og:url" content="https://www.pagomigo.com/plaid-accounts.html">
+  <meta property="og:type" content="website">
+  <title>Connected Accounts - Pagomigo</title>
+  <link rel="stylesheet" href="plaid-accounts.css">
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <header class="main-header">
+    <div class="logo"><a href="home.html"><img src="pagomigologo.png" id="logo" alt="pagomigologo"></a>
+    </div>
+    <img src="menuicon.svg" alt="Menu" class="hamburger" id="hamburger" />
+  </header>
+  <!--To change or add to nav go to menu.js-->
+  <nav class="slideout-menu" id="slideoutMenu">
+    <img src="closeicon.svg" alt="Close" class="close-btn" id="closeMenu" />
+    <ul id="navList"></ul>
+  </nav>
+
+  <main class="connected-accounts">
+    <section class="page-header">
+      <h1>Connected Accounts</h1>
+      <p>Connect and manage your bank accounts securely with Plaid</p>
+    </section>
+
+    <section class="accounts-section">
+      <div class="connect-account-button-container">
+        <button id="verify-identity-btn" class="primary-btn">
+          <img src="person_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg" alt="Verify" class="btn-icon">
+          Verify Your Identity
+        </button>
+      </div>
+      <div class="connect-account-button-container">
+        <button id="connect-bank-btn" class="primary-btn">
+          <img src="account_balance_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg" alt="Bank" class="btn-icon">
+          Connect a Bank Account
+        </button>
+      </div>
+
+      <!-- Messages -->
+      <div id="error-message" class="error-message hidden"></div>
+      <div id="success-message" class="success-message hidden"></div>
+
+      <!-- No accounts message -->
+      <div id="no-accounts-message" class="no-account-container">
+        <h3>No Connected Accounts</h3>
+        <p>Connect your bank accounts to easily transfer money, check balances, and view transactions.</p>
+      </div>
+
+      <!-- Connected accounts container -->
+      <div id="accounts-container" class="accounts-container hidden">
+        <h3>Your Connected Accounts</h3>
+        <ul id="accounts-list" class="accounts-list">
+          <!-- Accounts will be populated by JS -->
+        </ul>
+      </div>
+    </section>
+
+    <!-- Transactions Section (Initially Hidden) -->
+    <section id="transactions-section" class="transactions-section hidden">
+      <div class="section-header">
+        <h3 id="transactions-account-name">Transactions</h3>
+        <button id="close-transactions" class="close-btn">&times;</button>
+      </div>
+      <div class="transactions-list-container">
+        <ul id="transactions-list" class="transactions-list">
+          <!-- Transactions will be populated by JS -->
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-row footer-logo">
+      <img src="pagomigologo.png" alt="Pagomigo Logo" width="100" />
+    </div>
+  
+    <div class="footer-row footer-links">
+      <a href="termsandconditions.html">Terms & Conditions</a>
+      <a href="privacypolicy.html">Privacy Policy</a>
+    </div>
+  
+    <div class="footer-row footer-copy">
+      <p>&copy; 2025 Pagomigo.com L.L.C. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="plaidLink.js"></script>
+  <script src="menu.js"></script>
+</body>
+</html>
